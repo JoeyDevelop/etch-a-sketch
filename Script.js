@@ -1,16 +1,16 @@
-const containerDiv = document.querySelector("#container")
-let gridCount = 0;
+const container = document.getElementById("container");
 
-function makeRows(rows, columns) {
-    containerDiv.style.setProperty("--grid-rows", rows);
-    containerDiv.style.setProperty("--grid-columns", columns)
-    for ( i = 0; i < (rows * columns); i++) {
-        let cell = document.createElement("div");
-        cell.classList.add("grid-item")
-        cell.addEventListener("mouseover", () => {
-            cell.style.backgroundColor = "black";
-        })
-        containerDiv.appendChild(cell);
-    }
+function makeRows(rows, cols) {
+  container.style.setProperty('--grid-rows', rows);
+  container.style.setProperty('--grid-cols', cols);
+  for (c = 0; c < (rows * cols); c++) {
+    let cell = document.createElement("div");
+    // cell.innerText = (c + 1);
+    container.appendChild(cell).className = "grid-item";
+    cell.addEventListener("mouseover", () => {
+        cell.style.backgroundColor = "black";
+    })
+  }
 }
-makeRows (64, 64);
+
+makeRows(16, 16);
