@@ -1,5 +1,6 @@
 const container = document.getElementById("container");
 
+//Function to create Etch-A-Sketch grid
 function makeRows(rows, cols) {
   container.style.setProperty('--grid-rows', rows);
   container.style.setProperty('--grid-cols', cols);
@@ -13,12 +14,19 @@ function makeRows(rows, cols) {
   }
 }
 
-//makeRows(100, 100);
+//Page load up with basic 16x16 grid.
+makeRows(16, 16);
 
-// const gridbtn = document.querySelector("#grid-question");
-// gridbtn.addEventListener("click", () => {
-//     let answer = prompt("Please input the desired number of rows and columns. 100 is the highest accepted value.");
-//     console.log(answer);
-// });
-
-//console.log(answer);
+//btn to change grid size and clear divs on creation of new grid.
+const gridbtn = document.querySelector("#grid-question");
+gridbtn.addEventListener("click", () => {
+    let test = parseInt(prompt("Please enter a number 1-100."));
+    if (test < 101 && test > 0) {
+      container.innerHTML = "";
+      let rows = test;
+      let cols = test;
+      makeRows (rows, cols);
+    } else {
+      alert("The given input was invalid. Please enter a number 1-100.")
+    }
+});
