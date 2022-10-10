@@ -1,10 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Mali:ital@1&display=swap');
+
 :root {
     --grid-cols: 1;
     --grid-rows: 1;
-  }
+}
+
+h1 {
+    font-weight: bolder;
+    color: gold;
+    font-family: 'Mali', cursive;
+}
 
 body {
-    background-color: darkcyan;
+    background-color: hsla(0, 81%, 37%, 1)
 }
   
 .flex-container {
@@ -12,10 +20,11 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    }
+}
 
 #grid-question {
-    background-color: aquamarine;
+    font-weight: bolder;
+    background-color: white;
     border-radius: 10px;
     padding: 10px;
     margin-bottom: 20px;
@@ -32,8 +41,7 @@ body {
 }
 
 .grid-item {
-    background-color: white;
+    background-color: hsla(157, 11%, 60%, 1);
     padding: auto;
-    border: 1px solid #ddd;
     text-align: center;
-    }
+}
